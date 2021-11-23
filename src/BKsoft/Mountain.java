@@ -1,7 +1,5 @@
 package BKsoft;
 
-import org.w3c.dom.ranges.RangeException;
-
 import java.util.Scanner;
 
 public class Mountain {
@@ -9,10 +7,10 @@ public class Mountain {
     private MountainRange range;
     private int height;
 
-    public Mountain(String PeakName, int height, MountainRange range) throws HeightException, RangeException {
+    public Mountain(String PeakName) {
         this.peakName = PeakName;
-        setHeight(height);
-        this.range = range;
+        this.setHeight();
+        this.setRange();
     }
 
     public String getPeakName() {
@@ -23,13 +21,15 @@ public class Mountain {
         return height;
     }
 
-    public void setHeight(int height) {
-        try{
-            this.height = height;
-            if(height<1 || height>8848) throw new HeightException();
-        } catch (HeightException e) {
-            System.out.println(e.getMessage());
+    public void setHeight() {
+        int height = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        while(height<1 || height>8848){
+            height = scanner.nextInt();
+            if(height<1 || height>8848) System.out.println("Nie ma takich gor na Ziemi. Prosze wartosc miedzy 0 a 8848.");
         }
+        this.height = height;
     }
 
     public MountainRange getRange() {
@@ -37,22 +37,85 @@ public class Mountain {
     }
 
     public void setRange() {
+        String message =
+                "Prosze wybrac lancuhc gorski. Wprowadzenie innej liczby zostanie uznane jako 'inny' \n"+
+                        "0. inny \n" +
+                        "1. Alpy \n" +
+                        "2. Apeniny \n" +
+                        "3. Himalaje \n" +
+                        "4. Karakorum \n" +
+                        "5. Karpaty \n" +
+                        "6. Kaukaz \n" +
+                        "7. Pireneje \n" +
+                        "8. Sudety \n" +
+                        "9. Ural \n";
+
+        System.out.println(message);
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
 
         switch (x){
-            case 0: this.range=MountainRange.INNY;
-            case 1: this.range=MountainRange.ALPY;
-            case 2: this.range=MountainRange.APENINY;
-            case 3: this.range=MountainRange.HIMALAJE;
-            case 4: this.range=MountainRange.KARAKORUM;
-            case 5: this.range=MountainRange.KARPATY;
-            case 6: this.range=MountainRange.KAUKAZ;
-            case 7: this.range=MountainRange.PIRENEJE;
-            case 8: this.range=MountainRange.SUDETY;
-            case 9: this.range=MountainRange.URAL;
-            default: this.range=MountainRange.INNY;
+            case 1: {
+                this.range=MountainRange.ALPY;
+                break;
+            }
+            case 2: {
+                this.range=MountainRange.APENINY;
+                break;
+            }
+            case 3: {
+                this.range=MountainRange.HIMALAJE;
+                break;
+            }
+            case 4: {
+                this.range=MountainRange.KARAKORUM;
+                break;
+            }
+            case 5: {
+                this.range=MountainRange.KARPATY;
+                break;
+            }
+            case 6: {
+                this.range=MountainRange.KAUKAZ;
+                break;
+            }
+            case 7: {
+                this.range=MountainRange.PIRENEJE;
+                break;
+            }
+            case 8: {
+                this.range=MountainRange.SUDETY;
+                break;
+            }
+            case 9: {
+                this.range=MountainRange.URAL;
+                break;
+            }
+            default: {
+                this.range=MountainRange.INNY;
+                break;
+            }
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Mountain mountain = (Mountain) o;
+
+        if (height != mountain.height) return false;
+        if (!peakName.equals(mountain.peakName)) return false;
+        return range == mountain.range;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = peakName.hashCode();
+        result = 31 * result + range.hashCode();
+        result = 31 * result + height;
+        return result;
     }
 }
 

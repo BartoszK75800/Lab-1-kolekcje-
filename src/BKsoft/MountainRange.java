@@ -11,11 +11,4 @@ enum MountainRange{
     HIMALAJE,
     URAL,
     KARAKORUM
-
-    //String rangeName;
-
-    //private MountainRange(String range_name) {
-    //    rangeName = range_name;
-    //}
-
 }
