@@ -28,4 +28,10 @@ public class SetDatabase implements Database{
         //System.out.println("TreeSet: (z funkcjami porownawczymi):\n" + mountainTreeSetEH.toString() + "\n");
     }
 
+    @Override
+    public void delete(Mountain mountain, MountainEqHscode mtn) {
+        mountainHashSet.remove(mountain);
+        mountainHashSetEH.remove(mtn);
+    }
+
 }

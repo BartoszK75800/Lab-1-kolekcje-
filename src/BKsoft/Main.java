@@ -43,7 +43,11 @@ public class Main {
                    MountainEqHscode mtn = new MountainEqHscode(mountain);
                    database.addMountain(mountain, mtn);
              }
-                if(activity==2);
+                if(activity==2) {
+                    Mountain mountain = new Mountain();
+                    MountainEqHscode mtn = new MountainEqHscode(mountain);
+                    database.delete(mountain, mtn);
+                }
                 if(activity==3){
                    database.showDatabase();
             }
@@ -60,7 +64,11 @@ public class Main {
                     MountainEqHscode mtn = new MountainEqHscode(mountain);
                     database.addMountain(mountain, mtn);
                 }
-                if(activity==2);
+                if(activity==2) {
+                    Mountain mountain = new Mountain();
+                    MountainEqHscode mtn = new MountainEqHscode(mountain);
+                    database.delete(mountain, mtn);
+                }
                 if(activity==3){
                     database.showDatabase();
                 }
@@ -77,7 +85,11 @@ public class Main {
                     MountainEqHscode mtn = new MountainEqHscode(mountain);
                     database.addMountain(mountain, mtn);
                 }
-                if(activity==2);
+                if(activity==2) {
+                    Mountain mountain = new Mountain();
+                    MountainEqHscode mtn = new MountainEqHscode(mountain);
+                    database.delete(mountain, mtn);
+                }
                 if(activity==3){
                     database.showDatabase();
                 }

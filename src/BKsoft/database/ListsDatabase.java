@@ -27,4 +27,12 @@ public class ListsDatabase implements Database{
         System.out.println("Array List (z funkcjami porownawczymi): \n" + mountainArrayListEH.toString() + "\n");
         System.out.println("Linked List: (z funkcjami porownawczymi):\n" + mountainArrayListEH.toString() + "\n");
     }
+
+    @Override
+    public void delete(Mountain mountain, MountainEqHscode mtn) {
+        mountainArrayList.remove(mountain);
+        mountainLinkedList.remove(mountain);
+        mountainArrayListEH.remove(mtn);
+        mountainLinkedListEH.remove(mtn);
+    }
 }

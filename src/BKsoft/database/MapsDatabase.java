@@ -29,4 +29,10 @@ public class MapsDatabase implements Database{
         System.out.println("HashMap (z funkcjami porownawczymi): \n" + mountainHashMapEH.toString() + "\n");
         //System.out.println("TreeMap (z funkcjami porownawczymi):\n" + mountainTreeMapEH.toString() + "\n");
     }
+
+    @Override
+    public void delete(Mountain mountain, MountainEqHscode mtn) {
+        mountainHashMap.remove(mountain);
+        mountainHashMapEH.remove(mtn);
+    }
 }
