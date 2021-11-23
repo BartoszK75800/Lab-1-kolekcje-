@@ -40,13 +40,47 @@ public class Main {
 
                 if(activity==1){
                    Mountain mountain = new Mountain();
-                  database.addMountain(mountain);
+                   MountainEqHscode mtn = new MountainEqHscode();
+                   database.addMountain(mountain, mtn);
              }
                 if(activity==2);
                 if(activity==3){
-                   int size = database.dataSize();
                    database.showDatabase();
             }
+            }
+        }
+        if(collection==2){
+            Database database = new SetDatabase();
+            while(activity!=0){
+                System.out.println(activityMessage);
+                activity = scanner.nextInt();
+
+                if(activity==1){
+                    Mountain mountain = new Mountain();
+                    MountainEqHscode mtn = new MountainEqHscode();
+                    database.addMountain(mountain, mtn);
+                }
+                if(activity==2);
+                if(activity==3){
+                    database.showDatabase();
+                }
+            }
+        }
+        if(collection==3){
+            Database database = new MapsDatabase();
+            while(activity!=0){
+                System.out.println(activityMessage);
+                activity = scanner.nextInt();
+
+                if(activity==1){
+                    Mountain mountain = new Mountain();
+                    MountainEqHscode mtn = new MountainEqHscode();
+                    database.addMountain(mountain, mtn);
+                }
+                if(activity==2);
+                if(activity==3){
+                    database.showDatabase();
+                }
             }
         }
     }

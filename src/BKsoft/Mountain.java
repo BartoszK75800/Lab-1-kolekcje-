@@ -108,32 +108,11 @@ public class Mountain {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Mountain mountain = (Mountain) o;
-
-        if (height != mountain.height) return false;
-        if (!peakName.equals(mountain.peakName)) return false;
-        return range == mountain.range;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = peakName.hashCode();
-        result = 31 * result + range.hashCode();
-        result = 31 * result + height;
-        return result;
-    }
-
-    @Override
     public String toString() {
-        return "Mountain{" +
-                "peakName='" + peakName + '\'' +
-                ", range=" + range +
-                ", height=" + height +
-                '}';
+        return "{" +
+                peakName +
+                ", " + height +
+                "[m n.p.m., " + range + "}";
     }
 }
 
