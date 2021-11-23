@@ -7,8 +7,8 @@ public class Mountain {
     private MountainRange range;
     private int height;
 
-    public Mountain(String PeakName) {
-        this.peakName = PeakName;
+    public Mountain() {
+        this.setPeakName();
         this.setHeight();
         this.setRange();
     }
@@ -25,6 +25,7 @@ public class Mountain {
         int height = 0;
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Prosze podac wysokosc: ");
         while(height<1 || height>8848){
             height = scanner.nextInt();
             if(height<1 || height>8848) System.out.println("Nie ma takich gor na Ziemi. Prosze wartosc miedzy 0 a 8848.");
@@ -98,6 +99,14 @@ public class Mountain {
         }
     }
 
+    public void setPeakName() {
+        System.out.println("Prosze podac nazwe: ");
+        Scanner scanner = new Scanner(System.in);
+
+        String peakName = scanner.next();
+        this.peakName = peakName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -116,6 +125,15 @@ public class Mountain {
         result = 31 * result + range.hashCode();
         result = 31 * result + height;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Mountain{" +
+                "peakName='" + peakName + '\'' +
+                ", range=" + range +
+                ", height=" + height +
+                '}';
     }
 }
 

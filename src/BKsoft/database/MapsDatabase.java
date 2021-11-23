@@ -11,11 +11,16 @@ public class MapsDatabase implements Database{
 
     @Override
     public void addMountain(Mountain mountain) {
-        //mountainHashMap.put(mountain);
+        mountainHashMap.put(mountain.hashCode(),mountain);
     }
 
     @Override
     public void showDatabase() {
 
+    }
+
+    @Override
+    public int dataSize() {
+        return mountainHashMap.size();
     }
 }

@@ -17,6 +17,11 @@ public class ListsDatabase implements Database{
 
     @Override
     public void showDatabase() {
+        System.out.println("Array List: \n" + mountainArrayList.toString() + "\n");
+    }
 
+    @Override
+    public int dataSize(){
+        return mountainLinkedList.size();
     }
 }

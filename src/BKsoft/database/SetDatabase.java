@@ -19,4 +19,9 @@ public class SetDatabase implements Database{
     public void showDatabase() {
 
     }
+
+    @Override
+    public int dataSize(){
+        return mountainHashSet.size();
+    }
 }
