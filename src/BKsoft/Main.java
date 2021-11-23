@@ -40,7 +40,7 @@ public class Main {
 
                 if(activity==1){
                    Mountain mountain = new Mountain();
-                   MountainEqHscode mtn = new MountainEqHscode();
+                   MountainEqHscode mtn = new MountainEqHscode(mountain);
                    database.addMountain(mountain, mtn);
              }
                 if(activity==2);
@@ -57,7 +57,7 @@ public class Main {
 
                 if(activity==1){
                     Mountain mountain = new Mountain();
-                    MountainEqHscode mtn = new MountainEqHscode();
+                    MountainEqHscode mtn = new MountainEqHscode(mountain);
                     database.addMountain(mountain, mtn);
                 }
                 if(activity==2);
@@ -74,7 +74,7 @@ public class Main {
 
                 if(activity==1){
                     Mountain mountain = new Mountain();
-                    MountainEqHscode mtn = new MountainEqHscode();
+                    MountainEqHscode mtn = new MountainEqHscode(mountain);
                     database.addMountain(mountain, mtn);
                 }
                 if(activity==2);

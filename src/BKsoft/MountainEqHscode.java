@@ -1,34 +1,41 @@
 package BKsoft;
 
-public class MountainEqHscode extends Mountain{
-    private String peakName;
-    private MountainRange range;
-    private int height;
+public class MountainEqHscode{
+    private String peakNameEH;
+    private MountainRange rangeEH;
+    private int heightEH;
 
-    public MountainEqHscode(){
-        this.peakName = super.getPeakName();
-        this.height = super.getHeight();
-        this.range = super.getRange();
+    public MountainEqHscode(Mountain mountain){
+        this.peakNameEH = mountain.getPeakName();
+        this.heightEH = mountain.getHeight();
+        this.rangeEH = mountain.getRange();
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                peakNameEH +
+                ", " + heightEH +
+                "m n.p.m., " + rangeEH + "}";
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
 
         MountainEqHscode that = (MountainEqHscode) o;
 
-        if (height != that.height) return false;
-        if (!peakName.equals(that.peakName)) return false;
-        return range == that.range;
+        if (heightEH != that.heightEH) return false;
+        if (!peakNameEH.equals(that.peakNameEH)) return false;
+        return rangeEH == that.rangeEH;
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + peakName.hashCode();
-        result = 31 * result + height;
+        int result = peakNameEH.hashCode();
+        result = 31 * result + rangeEH.hashCode();
+        result = 31 * result + heightEH;
         return result;
     }
 }

@@ -6,5 +6,4 @@ import BKsoft.MountainEqHscode;
 public interface Database {
     public void addMountain(Mountain mountain, MountainEqHscode mnt);
     public void showDatabase();
-    public int dataSize();
 }

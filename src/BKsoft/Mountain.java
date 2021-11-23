@@ -112,7 +112,7 @@ public class Mountain {
         return "{" +
                 peakName +
                 ", " + height +
-                "[m n.p.m., " + range + "}";
+                "m n.p.m., " + range + "}";
     }
 }
 

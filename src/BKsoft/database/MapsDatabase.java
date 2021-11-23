@@ -8,15 +8,15 @@ import java.util.TreeMap;
 
 public class MapsDatabase implements Database{
     private HashMap<Mountain, Integer> mountainHashMap = new HashMap<>();
-    private TreeMap<Mountain, Integer> mountainTreeMap = new TreeMap<>();
-    private HashMap<Mountain, Integer> mountainHashMapEH = new HashMap<>();
-    private TreeMap<Mountain, Integer> mountainTreeMapEH = new TreeMap<>();
+    //private TreeMap<Mountain, Integer> mountainTreeMap = new TreeMap<>();
+    private HashMap<MountainEqHscode, Integer> mountainHashMapEH = new HashMap<>();
+    //private TreeMap<Mountain, Integer> mountainTreeMapEH = new TreeMap<>();
     Integer num=0;
 
     @Override
     public void addMountain(Mountain mountain, MountainEqHscode mtn) {
         this.num++;
-        mountainHashMap.put(mountain,num);
+        mountainHashMap.put(mountain, num);
         //mountainTreeMap.put(mountain,num);
         mountainHashMapEH.put(mtn, num);
         //mountainTreeMapEH.put(mtn, num);
@@ -28,10 +28,5 @@ public class MapsDatabase implements Database{
         //System.out.println("TreeMap: \n" + mountainTreeMap.toString() + "\n");
         System.out.println("HashMap (z funkcjami porownawczymi): \n" + mountainHashMapEH.toString() + "\n");
         //System.out.println("TreeMap (z funkcjami porownawczymi):\n" + mountainTreeMapEH.toString() + "\n");
-    }
-
-    @Override
-    public int dataSize() {
-        return mountainHashMap.size();
     }
 }
